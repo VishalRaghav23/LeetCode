@@ -1,0 +1,18 @@
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+        Arrays.sort(nums);
+        int arrSum = nums[0], dup = 0, sizeSum = 0, diff =0;
+        for(int i= 0; i < nums.length-1; i++){
+            arrSum += nums[i+1];
+            if(nums[i] == nums[i+1]){
+                dup = nums[i];
+            }
+            
+        }
+       for(int i =1; i <= nums.length; i++){
+           sizeSum += i; 
+       }   
+        diff = sizeSum - (arrSum-dup);
+        return new int[] {dup, diff};
+    }
+}
