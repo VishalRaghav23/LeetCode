@@ -1,4 +1,4 @@
-public ListNode deleteMiddle(ListNode head) {
+ public ListNode deleteMiddle(ListNode head) {
        int count = 1; 
         int mid = 0;
         ListNode curr = head;
@@ -6,16 +6,18 @@ public ListNode deleteMiddle(ListNode head) {
         if(head.next == null)
             return null;
         
+        // finding size of list
         while(curr.next != null){
             curr = curr.next;
             count++;
         }
         prev = count/2;
         curr = head;
+        
+        // prev element 
         for(int i = 1; i < prev; i++){
             curr = curr.next;
         }
-        curr = curr;
         curr.next = curr.next.next;
         return head;
     }
