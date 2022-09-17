@@ -1,4 +1,6 @@
  public ListNode removeElements(ListNode head, int val) {
+ 
+       // if first node is same as val
         while(head != null && head.val == val)
             head = head.next;
         
